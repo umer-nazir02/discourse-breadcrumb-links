@@ -1,0 +1,37 @@
+.breadcrumbs {
+  background: var(--primary-low);
+  border-radius: var(--d-border-radius);
+  margin-bottom: 0.5rem;
+
+  &__container {
+    min-height: 3em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0.5em;
+    color: var(--primary-medium);
+    font-size: 15px;
+    gap: 0.75em;
+  }
+  &__title {
+    .d-icon {
+      font-size: 13px;
+      padding-left: 0.25em;
+    }
+  }
+  &__links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    gap: 0.75em;
+    .home a {
+      color: var(--primary-medium);
+      &:hover {
+        color: var(--tertiary);
+      }
+    }
+    .current::before {
+      content: "/\00a0";
+    }
+  }
+}

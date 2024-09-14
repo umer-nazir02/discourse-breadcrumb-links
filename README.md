@@ -1,5 +1,3 @@
 # Breadcrumbs
 
-**Theme Summary**
-
-For more information, please see: **url to meta topic**
+A Discourse theme component. Adds breadcrumbs above the main container.
