@@ -12,10 +12,13 @@ export default class Breadcrumbs extends Component {
 
   get homePage() {
     return (
-      this.router.currentRoute.parent.name === "discovery" &&
-      this.router.currentRouteName !== "discovery.categories" &&
-      this.router.currentRouteName !== "discovery.category" &&
-      this.router.currentRouteName !== "discovery.categoryNone"
+      this.router.currentRouteName === "discovery.latest" ||
+      this.router.currentRouteName === "discovery.top" ||
+      this.router.currentRouteName === "discovery.new" ||
+      this.router.currentRouteName === "discovery.read" ||
+      this.router.currentRouteName === "discovery.unread" ||
+      this.router.currentRouteName === "discovery.unseen" ||
+      this.router.currentRouteName === "discovery.hot"
     );
     // return this.router.currentRouteName === `discovery.${defaultHomepage()}`;
   }
@@ -44,8 +47,8 @@ export default class Breadcrumbs extends Component {
         return i18n("js.category.all");
       case this.router?.currentRouteName === "tags.index":
         return i18n("js.tagging.all_tags");
-      case this.router.currentRouteName === "discovery.category" ||
-        this.router.currentRouteName === "discovery.categoryNone":
+      case this.router.currentRouteName.includes("category") ||
+        this.router.currentRouteName.includes("Category"):
         return this.categoryName;
       default:
         return null;
@@ -54,7 +57,8 @@ export default class Breadcrumbs extends Component {
 
   get parentPage() {
     switch (true) {
-      case this.router.currentRouteName === "discovery.category":
+      case this.router.currentRouteName.includes("category") ||
+        this.router.currentRouteName.includes("Category"):
         return this.parentCategoryName;
       default:
         return null;
