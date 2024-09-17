@@ -10,12 +10,11 @@ const updateBreadcrumbs = (url) => {
         // If on a Topic page
         if (url.includes('/t/')) {
             $("#breadcrumbsContainer").append(`
-
+<div class="breadcrumbs__container>
           <span class="breadcrumbs__title">
             You are here
-
           </span>
-    
+<ul class="breadcrumb__links">    
                 <li class="home">
                     <a href="/">Home</a>
                 </li>
@@ -89,6 +88,8 @@ const updateBreadcrumbs = (url) => {
                                         <li class="current">
                                             ${topicTitle}
                                         </li>
+</ul>
+</div>
                                     `);
                                 }
                             }
