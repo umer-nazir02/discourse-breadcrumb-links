@@ -1,8 +1,8 @@
 {
-  "name": "Breadcrumb Other Links",
+  "name": "Breadcrumb Navigation",
   "component": true,
-  "license_url": "https://github.com/denvergeeks/discourse-breadcrumb-other-links/blob/main/LICENSE",
-  "about_url": "https://github.com/denvergeeks/discourse-breadcrumb-other-links/blob/main/README.md",
+  "license_url": "https://github.com/denvergeeks/discourse-breadcrumb-nav/blob/main/LICENSE",
+  "about_url": "https://github.com/denvergeeks/discourse-breadcrumb-nav/blob/main/README.md",
   "authors": "Manuel Kostka, @denvergeeks",
   "theme_version": null,
   "minimum_discourse_version": null,
