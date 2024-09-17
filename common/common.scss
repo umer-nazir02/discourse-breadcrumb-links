@@ -37,15 +37,6 @@
   }
 }
 
-
-
-.static-login #breadcrumbsContainer,
-.has-full-page-chat #breadcrumbsContainer,
-.chat-drawer-active #breadcrumbsContainer,
-.chat-drawer-active .chat-drawer-expanded #breadcrumbsContainer {
-  display: none;
-}
-
 #breadcrumbsContainer {
     min-height: 3em;
     display: flex;
@@ -72,4 +63,12 @@
       content: "/\00a0";
     }
   }
+}
+
+body.has-breadcrumbs,
+.static-login #breadcrumbsContainer,
+.has-full-page-chat #breadcrumbsContainer,
+.chat-drawer-active #breadcrumbsContainer,
+.chat-drawer-active .chat-drawer-expanded #breadcrumbsContainer {
+  display: none;
 }
