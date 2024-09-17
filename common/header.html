@@ -6,10 +6,10 @@ api.onPageChange((url) => {
 const updateBreadcrumbs = (url) => {
     // Helper function to reset the breadcrumbs container
     const resetBreadcrumbs = () => {
-        $("#breadcrumbsContainer").empty();
+        $("div.breadcrumbs__container").empty();
         // If on a Topic page
         if (url.includes('/t/')) {
-            $("#breadcrumbsContainer").append(`
+            $("div.breadcrumbs__container").append(`
                 <li class="breadcrumb-item">
                     <a class="home" href="/"><< Home</a>
                 </li>
@@ -52,7 +52,7 @@ const updateBreadcrumbs = (url) => {
                                                 const parentCategoryURL = `/c/${parentResponse.category.slug}`;
 
                                                 // Append parent category first
-                                                $("#breadcrumbsContainer").append(`
+                                                $("div.breadcrumbs__container").append(`
                                                     <li class="breadcrumb-item">
                                                         <a href="${parentCategoryURL}">${parentCategoryTitle}</a>
                                                     </li>
@@ -60,7 +60,7 @@ const updateBreadcrumbs = (url) => {
                                             }
 
                                             // Append subcategory (or current category)
-                                            $("#breadcrumbsContainer").append(`
+                                            $("div.breadcrumbs__container").append(`
                                                 <li class="breadcrumb-item">
                                                     <a href="${categoryURL}">${categoryTitle}</a>
                                                 </li>
@@ -75,7 +75,7 @@ const updateBreadcrumbs = (url) => {
                                     });
                                 } else {
                                     // No parent category, just append the category and topic
-                                    $("#breadcrumbsContainer").append(`
+                                    $("div.breadcrumbs__container").append(`
                                         <li class="breadcrumb-item">
                                             <a href="${categoryURL}">${categoryTitle}</a>
                                         </li>
