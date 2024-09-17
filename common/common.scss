@@ -38,6 +38,9 @@
 }
 
 #breadcrumbsContainer {
+    background: var(--primary-low);
+    border-radius: var(--d-border-radius);
+    margin-bottom: .5rem;
     min-height: 3em;
     display: flex;
     justify-content: flex-start;
