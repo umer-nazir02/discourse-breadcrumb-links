@@ -15,7 +15,7 @@ const updateBreadcrumbs = (url) => {
         You are here
         <svg class="fa d-icon d-icon-arrow-right svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#arrow-right"></use></svg>
     </span>
-<ul class="breadcrumb__links">    
+<ul class="breadcrumbs__links">    
                 <li class="home">
                     <a href="/">Home</a>
                 </li>
@@ -25,7 +25,7 @@ const updateBreadcrumbs = (url) => {
 
     resetBreadcrumbs();
 
- if (url.includes('/t/')) {
+    if (url.includes('/t/')) {
         // If on a topic page
         const topicId = url.split('/')[2];
 
