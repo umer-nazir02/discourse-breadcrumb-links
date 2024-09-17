@@ -36,3 +36,48 @@
     }
   }
 }
+
+
+
+.static-login #breadcrumbsContainer,
+.has-full-page-chat #breadcrumbsContainer,
+.chat-drawer-active #breadcrumbsContainer,
+.chat-drawer-active .chat-drawer-expanded #breadcrumbsContainer {
+  display: none;
+}
+
+#breadcrumbsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  border-radius: .25rem;
+  width: fit-content;
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    /* font-size: var(--font-up-1); */
+    font-style: italic;
+    background-color: var(--blend-primary-secondary-5);
+    margin-bottom: .5rem;
+      
+    & + .breadcrumb-item::before {
+      content: "<";
+      color: var(--tertiary);
+      }
+
+      a {
+        text-decoration: none;
+        padding: .2rem .5rem .1rem;
+          
+        &:hover {
+        text-decoration: underline;
+        }
+      }
+
+      &.active {
+          display: none;
+          color: var(--primary-medium);
+      }
+  }
+}
