@@ -9,7 +9,7 @@ const updateBreadcrumbs = (url) => {
         $("div.breadcrumbs__container").empty();
         // If on a Topic page
         if (url.includes('/t/')) {
-            $("div.breadcrumbs__container").append(`
+            $(".breadcrumbs__links").append(`
                 <li class="breadcrumb-item">
                     <a class="home" href="/"><< Home</a>
                 </li>
