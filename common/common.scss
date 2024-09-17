@@ -70,4 +70,6 @@
     .parent::before,
     .current::before {
       content: "/\00a0";
+    }
+  }
 }
