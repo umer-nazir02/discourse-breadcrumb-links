@@ -7,6 +7,7 @@ const updateBreadcrumbs = (url) => {
     // Helper function to reset the breadcrumbs container
     const resetBreadcrumbs = () => {
         $("#breadcrumbsContainer").empty();
+    
         // If on a Topic page
         if (url.includes('/t/')) {
             $("#breadcrumbsContainer").append(`
@@ -58,7 +59,7 @@ const updateBreadcrumbs = (url) => {
                                                 const parentCategoryURL = `/c/${parentResponse.category.slug}`;
 
                                                 // Append parent category first
-                                                $("#breadcrumbsContainer").append(`
+                                                $("ul.breadcrumbs__links").append(`
                                                     <li class="parent">
                                                         <a href="${parentCategoryURL}">${parentCategoryTitle}</a>
                                                     </li>
@@ -66,7 +67,7 @@ const updateBreadcrumbs = (url) => {
                                             }
 
                                             // Append subcategory (or current category)
-                                            $("#breadcrumbsContainer").append(`
+                                            $("ul.breadcrumbs__links").append(`
                                                 <li class="parent">
                                                     <a href="${categoryURL}">${categoryTitle}</a>
                                                 </li>
@@ -82,7 +83,7 @@ const updateBreadcrumbs = (url) => {
                                     });
                                 } else {
                                     // No parent category, just append the category and topic
-                                    $("#breadcrumbsContainer").append(`
+                                    $("ul.breadcrumbs__links").append(`
                                         <li class="parent">
                                             <a href="${categoryURL}">${categoryTitle}</a>
                                         </li>
