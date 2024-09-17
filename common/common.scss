@@ -63,7 +63,7 @@
     }
     .parent::before,
     .current::before {
-      content: "/\00a0";
+      content: "/ ";
     }
   }
 }
