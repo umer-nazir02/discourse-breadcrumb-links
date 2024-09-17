@@ -59,7 +59,8 @@ const updateBreadcrumbs = (url) => {
                                             if (parentResponse && parentResponse.category) {
                                                 const parentCategoryTitle = parentResponse.category.name;
                                                 const parentCategoryURL = `/c/${parentResponse.category.slug}`;
-    const bothCategoryURL = parentCategoryURL + categorySlug.substring(categorySlug.indexOf("?"));
+    
+   // const bothCategoryURL = parentCategoryURL + categorySlug.substring(categorySlug.indexOf("?"));
 
                                                 // Append parent category first
                                                 $("ul.breadcrumbs__links").append(`
@@ -72,7 +73,9 @@ const updateBreadcrumbs = (url) => {
                                             // Append subcategory (or current category)
                                             $("ul.breadcrumbs__links").append(`
                                                 <li class="parent">
-                                                    <a href="${bothCategoryURL}">${categoryTitle}</a>
+                                                    <a href="${categoryTitle}">${categoryTitle}</a>
+
+    
                                                 </li>
                                                 <li class="current">
                                                     ${topicTitle}
