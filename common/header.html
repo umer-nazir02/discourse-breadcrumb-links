@@ -10,26 +10,9 @@ const updateBreadcrumbs = (url) => {
         // If on a Topic page
         if (url.includes('/t/')) {
             $("#breadcrumbsContainer").append(`
-
-    
-      <div class="breadcrumbs">
-        <div class="breadcrumbs__container">
-          <span class="breadcrumbs__title">
-            You are here
-            {{dIcon "arrow-right"}}
-          </span>
-          <ul class="breadcrumbs__links">
-            <li class="home">
-              {{#if this.homePage}}
-                Home
-              {{else}}
-                <a href="/">Home</a>
-              {{/if}}
-            </li>
-
-
-
-    
+                <li class="breadcrumb-item">
+                    <a class="home" href="/"><< Home</a>
+                </li>
             `);
         }
     };
@@ -78,10 +61,10 @@ const updateBreadcrumbs = (url) => {
 
                                             // Append subcategory (or current category)
                                             $("#breadcrumbsContainer").append(`
-                                                <li class="parent">
+                                                <li class="breadcrumb-item">
                                                     <a href="${categoryURL}">${categoryTitle}</a>
                                                 </li>
-                                                <li class="breadcrumb-item current">
+                                                <li class="breadcrumb-item active">
                                                     ${topicTitle}
                                                 </li>
                                             `);
@@ -97,16 +80,9 @@ const updateBreadcrumbs = (url) => {
                                             <a href="${categoryURL}">${categoryTitle}</a>
                                         </li>
 
-                                        <li class="breadcrumb-item current">
+                                        <li class="breadcrumb-item active">
                                             ${topicTitle}
                                         </li>
-
-
-          </ul>
-        </div>
-      </div>
-
-    
                                     `);
                                 }
                             }
