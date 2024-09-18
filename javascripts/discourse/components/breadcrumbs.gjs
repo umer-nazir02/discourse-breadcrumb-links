@@ -99,7 +99,7 @@ export default class Breadcrumbs extends Component {
   }
 
   <template>
-   {{#if (or this.homePage this.currentPage)}}
+   {{#if this.currentPage}}
       {{bodyClass "has-breadcrumbs"}}
       <div class="breadcrumbs">
         <div class="breadcrumbs__container">
@@ -107,7 +107,7 @@ export default class Breadcrumbs extends Component {
           <ul class="breadcrumbs__links">
             <li class="home">
               {{#if this.homePage}}
-                Home
+
               {{else}}
                 <a href="/">
                   <span class="breadcrumbs__title">
