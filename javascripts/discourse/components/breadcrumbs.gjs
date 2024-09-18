@@ -49,7 +49,7 @@ export default class Breadcrumbs extends Component {
         return i18n("js.tagging.all_tags");
       case this.router.currentRouteName.includes("Category") ||
         this.router.currentRouteName.includes("category") ||
-        this.router.currentRouteName.startsWith("tag"):
+        this.router.currentRouteName.includes("tag"):
         return this.categoryName;
       default:
         return null;
