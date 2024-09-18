@@ -48,7 +48,7 @@ const updateBreadcrumbs = (url) => {
                                 const parentCategoryId = categoryResponse.category.parent_category_id;
                                 const categoryURL = `/c/${categoryResponse.category.slug}`;
 
-             const categorySlug = `/c/${parentResponse.category.slug}/${categoryResponse.category.slug}`;
+             // const categorySlug = `/c/${parentResponse.category.slug}/${categoryResponse.category.slug}`;
     
                                 // If there's a parent category (subcategory case)
                                 if (parentCategoryId) {
@@ -60,7 +60,7 @@ const updateBreadcrumbs = (url) => {
                                                 const parentCategoryTitle = parentResponse.category.name;
                                                 const parentCategoryURL = `/c/${parentResponse.category.slug}`;
     
-   // const bothCategoryURL = parentCategoryURL + categorySlug.substring(categorySlug.indexOf("?"));
+const categorySlug = `/c/${parentResponse?.category?.slug || ''}/${categoryResponse?.category?.slug || ''}`;
 
                                                 // Append parent category first
                                                 $("ul.breadcrumbs__links").append(`
