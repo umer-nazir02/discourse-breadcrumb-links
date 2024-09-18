@@ -1,3 +1,5 @@
+if (!Discourse.Mobile) {
+
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
 // import { or } from "truth-helpers";
@@ -132,4 +134,5 @@ export default class Breadcrumbs extends Component {
       </div>
     {{/if}}
   </template>
+}
 }
