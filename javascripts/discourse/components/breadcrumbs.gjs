@@ -1,5 +1,3 @@
-
-
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
 // import { or } from "truth-helpers";
