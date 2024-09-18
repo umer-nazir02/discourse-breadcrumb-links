@@ -101,7 +101,7 @@ export default class Breadcrumbs extends Component {
   }
 
   <template>
-    {{#if this.currentPage}}
+    {{#if this.currentPage (and this.site.isMobileDevice (not this.site.mobileView))}}
       {{bodyClass "has-breadcrumbs"}}
       <div class="breadcrumbs">
         <div class="breadcrumbs__container">
