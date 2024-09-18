@@ -99,7 +99,7 @@ export default class Breadcrumbs extends Component {
   }
 
   <template>
-    {{#if (or this.homePage this.currentPage)}}
+    {{#if this.currentPage}}
       {{bodyClass "has-breadcrumbs"}}
       <div class="breadcrumbs">
         <div class="breadcrumbs__container">
