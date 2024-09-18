@@ -1,4 +1,4 @@
-if (!Discourse.Mobile) {
+
 
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
@@ -134,5 +134,4 @@ export default class Breadcrumbs extends Component {
       </div>
     {{/if}}
   </template>
-}
 }
