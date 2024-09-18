@@ -30,8 +30,9 @@
         color: var(--tertiary);
       }
     }
-    .parent::before,
-    .current::before {
+    .home::after,
+    .parent::after,
+    .current::after {
       content: "/\00a0";
     }
   }
@@ -69,8 +70,9 @@
         color: var(--tertiary);
       }
     }
-    .parent::before,
-    .current::before {
+    .home::after,
+    .parent::after,
+    .current::after {
       content: "/\00a0";
     }
   }
