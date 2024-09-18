@@ -2,7 +2,7 @@ import Component from "@glimmer/component";
 import { service } from "@ember/service";
 // import { or } from "truth-helpers";
 import bodyClass from "discourse/helpers/body-class";
-// import { defaultHomepage } from "discourse/lib/utilities";
+import { defaultHomepage } from "discourse/lib/utilities";
 import Category from "discourse/models/category";
 import dIcon from "discourse-common/helpers/d-icon";
 import i18n from "discourse-common/helpers/i18n";
@@ -20,7 +20,7 @@ export default class Breadcrumbs extends Component {
       this.router.currentRouteName === "discovery.unseen" ||
       this.router.currentRouteName === "discovery.hot"
     );
-    // return this.router.currentRouteName === `discovery.${defaultHomepage()}`;
+    return this.router.currentRouteName === `discovery.${defaultHomepage()}`;
   }
 
   get currentPage() {
