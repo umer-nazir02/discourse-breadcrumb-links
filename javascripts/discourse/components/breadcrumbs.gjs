@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
-import { or } from "truth-helpers";
+// import { or } from "truth-helpers";
 import bodyClass from "discourse/helpers/body-class";
 // import { defaultHomepage } from "discourse/lib/utilities";
 import Category from "discourse/models/category";
