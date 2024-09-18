@@ -12,7 +12,6 @@ export default class Breadcrumbs extends Component {
 
   get homePage() {
     return (
-      this.router.currentRouteName === "discovery.categories" ||
       this.router.currentRouteName === "discovery.latest" ||
       this.router.currentRouteName === "discovery.top" ||
       this.router.currentRouteName === "discovery.new" ||
@@ -21,7 +20,7 @@ export default class Breadcrumbs extends Component {
       this.router.currentRouteName === "discovery.unseen" ||
       this.router.currentRouteName === "discovery.hot"
     );
-    // return this.router.currentRouteName === `discovery.${defaultHomepage()}`;
+   return this.router.currentRouteName === `discovery.${defaultHomepage()}`;
   }
 
   get currentPage() {
