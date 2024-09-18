@@ -1,3 +1,17 @@
+@if $display_on_desktop == "false" {
+  .breadcrumbs,
+  #breadcrumbsContainer {
+    display: none !important;
+  }
+}
+@if $display_on_mobile == "false" {
+  .breadcrumbs,
+  #breadcrumbsContainer {
+    display: none !important;
+  }
+}
+
+
 .breadcrumbs {
   background: var(--primary-low);
   border-radius: var(--d-border-radius);
