@@ -105,7 +105,7 @@ export default class Breadcrumbs extends Component {
         <div class="breadcrumbs__container">
           <span class="breadcrumbs__title">
             You are here
-            {{dIcon "arrow-right"}}
+            {{dIcon "arrow-left"}}
           </span>
           <ul class="breadcrumbs__links">
             <li class="home">
