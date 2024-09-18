@@ -20,7 +20,7 @@ export default class Breadcrumbs extends Component {
       this.router.currentRouteName === "discovery.unseen" ||
       this.router.currentRouteName === "discovery.hot"
     );
-   return this.router.currentRouteName === `discovery.${defaultHomepage()}`;
+   // return this.router.currentRouteName === `discovery.${defaultHomepage()}`;
   }
 
   get currentPage() {
