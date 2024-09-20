@@ -132,15 +132,14 @@ export default class Breadcrumbs extends Component {
           <ul class="breadcrumbs__links">
             <li class="home">
               {{#if this.homePage}}
-
 Home
-
               {{else}}
                 <a href="/">
                   <span class="breadcrumbs__title">
                     {{dIcon "arrow-left"}}
                   </span>
-                Home</a>
+Home            </a>
+
               {{/if}}
             </li>
             {{#if this.parentPage}}
