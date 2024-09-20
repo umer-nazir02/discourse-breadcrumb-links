@@ -29,12 +29,14 @@ export default class Breadcrumbs extends Component {
         return i18n("js.groups.messages");
       case this.router.currentRouteName.startsWith("admin"):
         return i18n("js.admin_title");
+
       case this.router.currentRouteName.startsWith("chat"):
         return i18n("js.chat.heading");
       case this.router.currentRouteName === "userNotifications.responses" ||
         this.router.currentRouteName === "userNotifications.mentions":
         return i18n("js.groups.mentions");
-      case this.router.currentRouteName === "userActivity.bookmarks":
+      case this.router.currentRouteName === "userActivity.bookmarks" ||
+        this.router.currentRouteName.startsWith("bookmarks"):
         return i18n("js.user.bookmarks");
       case this.router?.currentRoute?.parent?.name === "docs":
         return i18n("js.docs.title");
@@ -47,7 +49,7 @@ export default class Breadcrumbs extends Component {
       case this.router?.currentRouteName === "discovery.categories":
         return i18n("js.category.all");
       case this.router?.currentRouteName === "discovery.latest":
-        return i18n("- Latest");
+        return i18n("js.category.Latest");
       case this.router?.currentRouteName === "discovery.top":
         return i18n("js.category.Top");
       case this.router?.currentRouteName === "discovery.new":
