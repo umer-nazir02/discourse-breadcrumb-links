@@ -41,6 +41,10 @@ export default class Breadcrumbs extends Component {
         return i18n("js.docs.title");
       case this.router?.currentRoute?.parent?.name === "preferences":
         return i18n("js.user.preferences.title");
+
+      case this.router?.currentRoute?.parent?.name === "follow":
+        return i18n("js.user.follow.title");
+
       case this.router.currentRouteName === "discourse-post-event-upcoming-events.index":
         return i18n("js.discourse_post_event.upcoming_events.title");
 
