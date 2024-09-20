@@ -25,6 +25,10 @@ export default class Breadcrumbs extends Component {
 
   get currentPage() {
     switch (true) {
+
+      case this.router?.currentRouteName === "discovery.categories":
+        return i18n("js.category.all");
+
       case this.router.currentRouteName.includes("userPrivateMessages"):
         return i18n("js.groups.messages");
       case this.router.currentRouteName.startsWith("admin"):
@@ -47,10 +51,6 @@ export default class Breadcrumbs extends Component {
 
       case this.router.currentRouteName === "discourse-post-event-upcoming-events.index":
         return i18n("js.discourse_post_event.upcoming_events.title");
-
-      case this.router?.currentRouteName === "discovery.categories":
-        return i18n("js.category.all");
-
 
       case this.router?.currentRouteName === "tags.index":
         return i18n("js.tagging.all_tags");
