@@ -29,32 +29,10 @@ export default class Breadcrumbs extends Component {
 
       case this.router?.currentRouteName === "discovery.categories":
         return i18n("js.category.all");
-
-
-
-
-      case this.router?.currentRouteName === "discovery.latest":
-        return i18n("js.latest.all");
-      case this.router?.currentRouteName === "discovery.top":
-        return i18n("js.category.Top");
-      case this.router?.currentRouteName === "discovery.new":
-        return i18n("js.category.New");
-      case this.router?.currentRouteName === "discovery.read":
-        return i18n("js.category.Read");
-      case this.router?.currentRouteName === "discovery.unread":
-        return i18n("js.category.Unread");
-      case this.router?.currentRouteName === "discovery.unseen":
-        return i18n("js.category.Unseen");
-      case this.router?.currentRouteName === "discovery.posted":
-        return i18n("js.category.My Posts");
-      case this.router?.currentRouteName === "discovery.hot":
-        return i18n("js.category.Hot");
-
       case this.router.currentRouteName.includes("userPrivateMessages"):
         return i18n("js.groups.messages");
       case this.router.currentRouteName.startsWith("admin"):
         return i18n("js.admin_title");
-
       case this.router.currentRouteName.startsWith("chat"):
         return i18n("js.chat.heading");
       case this.router.currentRouteName === "userNotifications.responses" ||
@@ -66,13 +44,8 @@ export default class Breadcrumbs extends Component {
         return i18n("js.docs.title");
       case this.router?.currentRoute?.parent?.name === "preferences":
         return i18n("js.user.preferences.title");
-
-      case this.router?.currentRoute?.parent?.name === "follow":
-        return i18n("js.user.follow.title");
-
       case this.router.currentRouteName === "discourse-post-event-upcoming-events.index":
         return i18n("js.discourse_post_event.upcoming_events.title");
-
       case this.router?.currentRouteName === "tags.index":
         return i18n("js.tagging.all_tags");
       case this.router.currentRouteName.includes("Category") ||
