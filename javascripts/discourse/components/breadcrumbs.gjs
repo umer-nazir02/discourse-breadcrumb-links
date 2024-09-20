@@ -44,6 +44,23 @@ export default class Breadcrumbs extends Component {
         "discourse-post-event-upcoming-events.index":
         return i18n("js.discourse_post_event.upcoming_events.title");
 
+      case this.router?.currentRouteName === "discovery.categories":
+        return i18n("js.category.all");
+      case this.router?.currentRouteName === "discovery.latest":
+        return i18n("js.category.all");
+      case this.router?.currentRouteName === "discovery.top":
+        return i18n("js.category.all");
+      case this.router?.currentRouteName === "discovery.new":
+        return i18n("js.category.all");
+      case this.router?.currentRouteName === "discovery.read":
+        return i18n("js.category.all");
+      case this.router?.currentRouteName === "discovery.unread":
+        return i18n("js.category.all");
+      case this.router?.currentRouteName === "discovery.unseen":
+        return i18n("js.category.all");
+      case this.router?.currentRouteName === "discovery.hot":
+        return i18n("js.category.all");
+
       case this.router?.currentRouteName === "tags.index":
         return i18n("js.tagging.all_tags");
       case this.router.currentRouteName.includes("Category") ||
