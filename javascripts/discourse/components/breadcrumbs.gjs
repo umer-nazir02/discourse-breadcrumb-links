@@ -29,6 +29,21 @@ export default class Breadcrumbs extends Component {
       case this.router?.currentRouteName === "discovery.categories":
         return i18n("js.category.all");
 
+      case this.router?.currentRouteName === "discovery.latest":
+        return i18n("js.category.Latest");
+      case this.router?.currentRouteName === "discovery.top":
+        return i18n("js.category.Top");
+      case this.router?.currentRouteName === "discovery.new":
+        return i18n("js.category.New");
+      case this.router?.currentRouteName === "discovery.read":
+        return i18n("js.category.Read");
+      case this.router?.currentRouteName === "discovery.unread":
+        return i18n("js.category.Unread");
+      case this.router?.currentRouteName === "discovery.unseen":
+        return i18n("js.category.Unseen");
+      case this.router?.currentRouteName === "discovery.hot":
+        return i18n("js.category.Hot");
+
       case this.router.currentRouteName.includes("userPrivateMessages"):
         return i18n("js.groups.messages");
       case this.router.currentRouteName.startsWith("admin"):
