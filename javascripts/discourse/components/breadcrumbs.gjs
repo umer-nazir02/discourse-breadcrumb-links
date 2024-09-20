@@ -106,10 +106,11 @@ export default class Breadcrumbs extends Component {
         <div class="breadcrumbs__container">
 
           <ul class="breadcrumbs__links">
-            <li class="home">
+
               {{#if this.homePage}}
 Home
               {{else}}
+            <li class="home">
                 <a href="/">
                   <span class="breadcrumbs__title">
                     {{dIcon "arrow-left"}}
@@ -118,6 +119,7 @@ Home            </a>
 
               {{/if}}
             </li>
+
             {{#if this.parentPage}}
               <li class="parent">
                 <a href="/c/{{this.parentCategoryLink}}">
