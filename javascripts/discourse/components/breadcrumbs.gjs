@@ -31,7 +31,7 @@ export default class Breadcrumbs extends Component {
         return i18n("js.category.all");
 
       case this.router?.currentRouteName === "discovery.latest":
-        return i18n("js.category.Latest");
+        return i18n("js.category.latest");
       case this.router?.currentRouteName === "discovery.top":
         return i18n("js.category.Top");
       case this.router?.currentRouteName === "discovery.new":
