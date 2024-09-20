@@ -110,7 +110,12 @@ export default class Breadcrumbs extends Component {
 
             <li class="home">
               {{#if this.homePage}}
-<p>Home</p>
+
+                  <span class="breadcrumbs__title">
+Home
+                  </span>
+
+
               {{else}}
 
                 <a href="/">
