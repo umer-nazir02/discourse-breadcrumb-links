@@ -36,7 +36,7 @@ export default class Breadcrumbs extends Component {
         this.router.currentRouteName === "userNotifications.mentions":
         return i18n("js.groups.mentions");
       case this.router.currentRouteName === "userActivity.bookmarks" ||
-        this.router.currentRouteName.startsWith("bookmarks"):
+        this.router?.currentRoute?.parent?.name === "bookmarks":
         return i18n("js.user.bookmarks");
       case this.router?.currentRoute?.parent?.name === "docs":
         return i18n("js.docs.title");
