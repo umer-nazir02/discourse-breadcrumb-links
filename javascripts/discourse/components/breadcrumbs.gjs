@@ -42,6 +42,8 @@ export default class Breadcrumbs extends Component {
         return i18n("js.category.Unread");
       case this.router?.currentRouteName === "discovery.unseen":
         return i18n("js.category.Unseen");
+      case this.router?.currentRouteName === "discovery.posted":
+        return i18n("js.category.My Posts");
       case this.router?.currentRouteName === "discovery.hot":
         return i18n("js.category.Hot");
 
