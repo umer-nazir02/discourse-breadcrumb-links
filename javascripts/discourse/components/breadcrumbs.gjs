@@ -37,14 +37,11 @@ export default class Breadcrumbs extends Component {
         return i18n("js.groups.mentions");
       case this.router.currentRouteName === "userActivity.bookmarks":
         return i18n("js.user.bookmarks");
-      case this.router.currentRouteName === "userActivity.summary":
-        return i18n("js.user.summary");
       case this.router?.currentRoute?.parent?.name === "docs":
         return i18n("js.docs.title");
       case this.router?.currentRoute?.parent?.name === "preferences":
         return i18n("js.user.preferences.title");
-      case this.router.currentRouteName ===
-        "discourse-post-event-upcoming-events.index":
+      case this.router.currentRouteName === "discourse-post-event-upcoming-events.index":
         return i18n("js.discourse_post_event.upcoming_events.title");
 
       case this.router?.currentRouteName === "discovery.categories":
