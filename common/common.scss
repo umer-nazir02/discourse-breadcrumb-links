@@ -16,6 +16,10 @@
     }
 }
 
+.discourse-breadcrumb-links {
+  z-index: 1000;
+}
+
 .breadcrumbs {
   z-index: 1000;
   background: var(--primary-low);
