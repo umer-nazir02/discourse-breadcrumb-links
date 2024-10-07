@@ -1,3 +1,6 @@
 display_on_mobile:
   type: bool
   default: true
+sticky_under_header:
+  type: bool
+  default: false
