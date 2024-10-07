@@ -8,6 +8,7 @@
 }
 
 @if $sticky-under-header == "true" {
+    .breadcrumbs,
     .discourse-breadcrumb-links,
     #breadcrumbsContainer {
       position: sticky !important;
