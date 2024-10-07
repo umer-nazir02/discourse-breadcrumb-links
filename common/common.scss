@@ -10,8 +10,8 @@
 @if $sticky-under-header == "true" {
     .breadcrumbs,
     #breadcrumbsContainer {
-      position: sticky;
-      top: calc(var(--header-offset));
+      position: sticky !important;
+      top: calc(var(--header-offset)) !important;
     }
 }
 
