@@ -7,6 +7,11 @@
     }
 }
 
+.discourse-breadcrumb-links {
+  position: sticky;
+  top: calc(var(--header-offset));
+}
+
 .breadcrumbs {
   background: var(--primary-low);
   border-radius: var(--d-border-radius);
