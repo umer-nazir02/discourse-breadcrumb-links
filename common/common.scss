@@ -107,7 +107,7 @@
 
 
 body.has-breadcrumbs #breadcrumbsContainer,
-li.current.topic, /* excludes the current topic from the breadcrumb */
+/* li.current.topic, */ /* excludes the current topic from the breadcrumb */
 .static-login #breadcrumbsContainer,
 .has-full-page-chat #breadcrumbsContainer,
 .chat-drawer-active #breadcrumbsContainer,
