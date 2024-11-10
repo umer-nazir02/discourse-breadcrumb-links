@@ -1,14 +1,16 @@
 @if $display_on_mobile == "false" {
-    @media (max-width: 1026px) {
-      .breadcrumbs,
-        #breadcrumbsContainer {
-            display: none !important;
-        }
+  @media (max-width: 1026px) {
+    .breadcrumbs,
+    .discourse-breadcrumb-links,
+    #breadcrumbsContainer {
+      display: none !important;
     }
+  }
 }
 
 @if $sticky-under-header == "true" {
     .breadcrumbs,
+    .discourse-breadcrumb-links,
     #breadcrumbsContainer {
       position: sticky !important;
       top: calc(var(--header-offset)) !important;
