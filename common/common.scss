@@ -1,8 +1,7 @@
 @if $display_on_mobile == "false" {
   @media (max-width: 1026px) {
     .breadcrumbs,
-    .discourse-breadcrumb-links,
-    #breadcrumbsContainer {
+    .discourse-breadcrumb-links {
       display: none !important;
     }
   }
