@@ -27,8 +27,6 @@ export default class Breadcrumbs extends Component {
   get currentPage() {
     switch (true) {
 
-      case this.router?.currentRouteName === "discovery.categories":
-        return i18n("js.category.all");
       case this.router.currentRouteName.includes("userPrivateMessages"):
         return i18n("js.groups.messages");
       case this.router.currentRouteName.startsWith("admin"):
