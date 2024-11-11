@@ -12,6 +12,7 @@ export default class Breadcrumbs extends Component {
 
   get homePage() {
     return (
+      this.router.currentRouteName === "discovery.categories" ||
       this.router.currentRouteName === "discovery.latest" ||
       this.router.currentRouteName === "discovery.top" ||
       this.router.currentRouteName === "discovery.new" ||
