@@ -31,8 +31,7 @@ export default class Breadcrumbs extends Component {
         return i18n("js.groups.messages");
       case this.router.currentRouteName.startsWith("admin"):
         return i18n("js.admin_title");
-      case this.router.currentRouteName.startsWith("chat"):
-        return i18n("js.chat.heading");
+
       case this.router.currentRouteName === "userNotifications.responses" ||
         this.router.currentRouteName === "userNotifications.mentions":
         return i18n("js.groups.mentions");
