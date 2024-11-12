@@ -104,14 +104,10 @@ export default class Breadcrumbs extends Component {
         <div class="breadcrumbs__container">
 
           <ul class="breadcrumbs__links">
-
-
             <li class="home">
               {{#if this.homePage}}
 
 Home
-
-
 
               {{else}}
 
