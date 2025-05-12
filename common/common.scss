@@ -114,3 +114,7 @@ li.current.topic, /* excludes the current Topic title from the breadcrumb */
 .chat-drawer-active .chat-drawer-expanded #breadcrumbsContainer {
   display: none;
 }
+
+.breadcrumbs__title {
+  display: none
+}
