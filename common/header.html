@@ -73,9 +73,6 @@ const updateBreadcrumbs = (url) => {
                                                 <li class="parent">
                                                     <a href="${catSubcatURL}">${categoryTitle}</a>
                                                 </li>
-                                                <li class="current topic">
-                                                    ${topicTitle}
-                                                </li>
                                             `);
                                         },
                                         error: function(error) {
@@ -87,10 +84,6 @@ const updateBreadcrumbs = (url) => {
                                     $("ul.breadcrumbs__links").append(`
                                         <li class="parent">
                                             <a href="${categoryURL}">${categoryTitle}</a>
-                                        </li>
-
-                                        <li class="current topic">
-                                            ${topicTitle}
                                         </li>
                                         </ul>
                                     </div>
