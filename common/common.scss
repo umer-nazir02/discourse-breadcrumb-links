@@ -52,7 +52,9 @@
         color: var(--tertiary);
       }
     }
-    .home::after {
+    .home::after,
+    .parent::after,
+    .current::after  {
       content: ">\00a0";
     }
   }
@@ -93,7 +95,8 @@
       }
     }
     .home::after,
-    .parent::after{
+    .parent::after,
+    .current::after {
       content: ">\00a0";
     }
   }
