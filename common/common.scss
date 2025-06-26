@@ -93,8 +93,7 @@
         color: var(--tertiary);
       }
     }
-    .home::after,
-    .parent::after{
+    .home::after{
       content: ">\00a0";
     }
   }
