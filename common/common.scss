@@ -52,8 +52,7 @@
         color: var(--tertiary);
       }
     }
-    .home::after,
-    .parent::after {
+    .home::after {
       content: ">\00a0";
     }
   }
@@ -93,7 +92,8 @@
         color: var(--tertiary);
       }
     }
-    .home::after{
+    .home::after,
+    .parent::after{
       content: ">\00a0";
     }
   }
