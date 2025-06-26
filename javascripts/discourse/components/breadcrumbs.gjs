@@ -126,11 +126,6 @@ All
                   {{this.parentPage}}</a>
               </li>
             {{/if}}
-            {{#if this.currentPage}}
-              <li class="current">
-                {{this.currentPage}}
-              </li>
-            {{/if}}
           </ul>
         </div>
       </div>
