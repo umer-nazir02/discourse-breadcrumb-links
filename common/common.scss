@@ -53,8 +53,7 @@
       }
     }
     .home::after,
-    .parent::after,
-    .current::after {
+    .parent::after {
       content: ">\00a0";
     }
   }
@@ -95,8 +94,7 @@
       }
     }
     .home::after,
-    .parent::after,
-    .current::after {
+    .parent::after{
       content: ">\00a0";
     }
   }
