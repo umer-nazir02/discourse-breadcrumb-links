@@ -37,6 +37,22 @@
                     if (response && response.title) {
                         const topicTitle = response.title;
                         const categoryId = response.category_id;
+                        const topicTags = response.tags || [];
+    
+                        // Add tags after breadcrumbs if they exist
+                        if (topicTags.length > 0) {
+                            let tagsHtml = '<div class="breadcrumbs__tags"><div class="discourse-tags" role="list">';
+                            topicTags.forEach((tag, index) => {
+                                tagsHtml += `<a href="/tag/${tag}" class="discourse-tag simple" rel="tag" title="${tag}" data-tag-name="${tag}">${tag}</a>`;
+                                if (index < topicTags.length - 1) {
+                                    tagsHtml += '<span class="discourse-tags__tag-separator">,</span>';
+                                }
+                            });
+                            tagsHtml += '</div></div>';
+                            
+                            // Insert tags after the breadcrumbs links
+                            $("#breadcrumbsContainer .breadcrumbs__container").append(tagsHtml);
+                        }
     
                         // Fetch the category name using the category ID
                         $.ajax({
@@ -112,4 +128,4 @@
             });
         }
     }
-    </script>
+</script>

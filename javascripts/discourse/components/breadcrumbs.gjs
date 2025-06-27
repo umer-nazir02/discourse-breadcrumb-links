@@ -6,6 +6,7 @@ import { defaultHomepage } from "discourse/lib/utilities";
 import Category from "discourse/models/category";
 import dIcon from "discourse-common/helpers/d-icon";
 import i18n from "discourse-common/helpers/i18n";
+import renderTags from "discourse/lib/render-tags";
 
 export default class Breadcrumbs extends Component {
   @service router;
@@ -26,12 +27,10 @@ export default class Breadcrumbs extends Component {
 
   get currentPage() {
     switch (true) {
-
       case this.router.currentRouteName.includes("userPrivateMessages"):
         return i18n("js.groups.messages");
       case this.router.currentRouteName.startsWith("admin"):
         return i18n("js.admin_title");
-
       case this.router.currentRouteName === "userNotifications.responses" ||
         this.router.currentRouteName === "userNotifications.mentions":
         return i18n("js.groups.mentions");
@@ -96,35 +95,30 @@ export default class Breadcrumbs extends Component {
     }
   }
 
-  <template>
-    {{#if this.currentPage}}
-      {{bodyClass "has-breadcrumbs"}}
-      <div class="breadcrumbs">
-        <div class="breadcrumbs__container">
+  // Get current topic if we're on a topic page
+  get currentTopic() {
+    if (this.router.currentRouteName === "topic") {
+      return this.router.currentRoute?.attributes?.topic;
+    }
+    return null;
+  }
 
-          <ul class="breadcrumbs__links">
-            <li class="home">
-              {{#if this.homePage}}
-All
-              {{else}}
-                <a href="/">
-                  <span class="breadcrumbs__title">
-                    {{dIcon "arrow-left"}}
-                  </span>
-All
-                </a>
-              {{/if}}
-            </li>
+  // Get tags for current topic
+  get topicTags() {
+    if (this.currentTopic && this.currentTopic.tags) {
+      return this.currentTopic.tags;
+    }
+    return null;
+  }
 
-            {{#if this.parentPage}}
-              <li class="parent">
-                <a href="/c/{{this.parentCategoryLink}}">
-                  {{this.parentPage}}</a>
-              </li>
-            {{/if}}
-          </ul>
-        </div>
-      </div>
-    {{/if}}
+  // Render tags HTML
+  get tagsHtml() {
+    if (this.topicTags && this.topicTags.length > 0) {
+      return renderTags(this.currentTopic, { mode: "list" });
+    }
+    return null;
+  }
+
+{{/if}}
   </template>
 }
