@@ -39,7 +39,7 @@
                         const categoryId = response.category_id;
                         const topicTags = response.tags || [];
     
-                        // Add tags after breadcrumbs if they exist
+                        // Add tags first if they exist
                         if (topicTags.length > 0) {
                             let tagsHtml = '<div class="breadcrumbs__tags"><div class="discourse-tags" role="list">';
                             topicTags.forEach((tag, index) => {
@@ -50,8 +50,8 @@
                             });
                             tagsHtml += '</div></div>';
                             
-                            // Insert tags after the breadcrumbs links
-                            $("#breadcrumbsContainer .breadcrumbs__container").append(tagsHtml);
+                            // Insert tags before the breadcrumbs links
+                            $("#breadcrumbsContainer .breadcrumbs__container").prepend(tagsHtml);
                         }
     
                         // Fetch the category name using the category ID

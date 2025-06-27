@@ -119,6 +119,41 @@ export default class Breadcrumbs extends Component {
     return null;
   }
 
-{{/if}}
+  <template>
+    {{#if this.currentPage}}
+      {{bodyClass "has-breadcrumbs"}}
+      <div class="breadcrumbs">
+        <div class="breadcrumbs__container">
+          {{! Display tags first if available }}
+          {{#if this.tagsHtml}}
+            <div class="breadcrumbs__tags">
+              {{{this.tagsHtml}}}
+            </div>
+          {{/if}}
+
+          <ul class="breadcrumbs__links">
+            <li class="home">
+              {{#if this.homePage}}
+All
+              {{else}}
+                <a href="/">
+                  <span class="breadcrumbs__title">
+                    {{dIcon "arrow-left"}}
+                  </span>
+All
+                </a>
+              {{/if}}
+            </li>
+
+            {{#if this.parentPage}}
+              <li class="parent">
+                <a href="/c/{{this.parentCategoryLink}}">
+                  {{this.parentPage}}</a>
+              </li>
+            {{/if}}
+          </ul>
+        </div>
+      </div>
+    {{/if}}
   </template>
 }
