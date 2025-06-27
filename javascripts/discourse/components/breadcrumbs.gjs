@@ -26,12 +26,10 @@ export default class Breadcrumbs extends Component {
 
   get currentPage() {
     switch (true) {
-
       case this.router.currentRouteName.includes("userPrivateMessages"):
         return i18n("js.groups.messages");
       case this.router.currentRouteName.startsWith("admin"):
         return i18n("js.admin_title");
-
       case this.router.currentRouteName === "userNotifications.responses" ||
         this.router.currentRouteName === "userNotifications.mentions":
         return i18n("js.groups.mentions");
@@ -96,27 +94,51 @@ export default class Breadcrumbs extends Component {
     }
   }
 
+  // Get current topic if we're on a topic page
+  get currentTopic() {
+    if (this.router.currentRouteName === "topic") {
+      return this.router.currentRoute?.attributes?.topic;
+    }
+    return null;
+  }
+
+  // Get tags for current topic
+  get topicTags() {
+    if (this.currentTopic && this.currentTopic.tags) {
+      return this.currentTopic.tags;
+    }
+    return null;
+  }
+
+  // Render tags HTML
+  get tagsHtml() {
+    if (this.topicTags && this.topicTags.length > 0) {
+      let tagsHtml = '<div class="discourse-tags" role="list">';
+      this.topicTags.forEach((tag) => {
+        tagsHtml += `<a href="/tag/${tag}" class="discourse-tag simple" rel="tag" title="${tag}" data-tag-name="${tag.toLowerCase()}">${tag}</a>`;
+      });
+      tagsHtml += '</div>';
+      return tagsHtml;
+    }
+    return null;
+  }
+
   <template>
     {{#if this.currentPage}}
       {{bodyClass "has-breadcrumbs"}}
       <div class="breadcrumbs">
         <div class="breadcrumbs__container">
-
           <ul class="breadcrumbs__links">
             <li class="home">
               {{#if this.homePage}}
-
 All
-
               {{else}}
-
                 <a href="/">
                   <span class="breadcrumbs__title">
                     {{dIcon "arrow-left"}}
                   </span>
 All
                 </a>
-
               {{/if}}
             </li>
 
@@ -126,12 +148,14 @@ All
                   {{this.parentPage}}</a>
               </li>
             {{/if}}
-            {{#if this.currentPage}}
-              <li class="current">
-                {{this.currentPage}}
-              </li>
-            {{/if}}
           </ul>
+
+          {{! Display tags after breadcrumbs if available }}
+          {{#if this.tagsHtml}}
+            <div class="breadcrumbs__tags">
+              {{{this.tagsHtml}}}
+            </div>
+          {{/if}}
         </div>
       </div>
     {{/if}}
