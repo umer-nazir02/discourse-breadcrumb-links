@@ -6,7 +6,6 @@ import { defaultHomepage } from "discourse/lib/utilities";
 import Category from "discourse/models/category";
 import dIcon from "discourse-common/helpers/d-icon";
 import i18n from "discourse-common/helpers/i18n";
-import renderTags from "discourse/lib/render-tags";
 
 export default class Breadcrumbs extends Component {
   @service router;
@@ -114,7 +113,12 @@ export default class Breadcrumbs extends Component {
   // Render tags HTML
   get tagsHtml() {
     if (this.topicTags && this.topicTags.length > 0) {
-      return renderTags(this.currentTopic, { mode: "list" });
+      let tagsHtml = '<div class="discourse-tags" role="list">';
+      this.topicTags.forEach((tag) => {
+        tagsHtml += `<a href="/tag/${tag}" class="discourse-tag simple" rel="tag" title="${tag}" data-tag-name="${tag}">${tag}</a>`;
+      });
+      tagsHtml += '</div>';
+      return tagsHtml;
     }
     return null;
   }
@@ -124,13 +128,6 @@ export default class Breadcrumbs extends Component {
       {{bodyClass "has-breadcrumbs"}}
       <div class="breadcrumbs">
         <div class="breadcrumbs__container">
-          {{! Display tags first if available }}
-          {{#if this.tagsHtml}}
-            <div class="breadcrumbs__tags">
-              {{{this.tagsHtml}}}
-            </div>
-          {{/if}}
-
           <ul class="breadcrumbs__links">
             <li class="home">
               {{#if this.homePage}}
@@ -152,6 +149,13 @@ All
               </li>
             {{/if}}
           </ul>
+
+          {{! Display tags after breadcrumbs if available }}
+          {{#if this.tagsHtml}}
+            <div class="breadcrumbs__tags">
+              {{{this.tagsHtml}}}
+            </div>
+          {{/if}}
         </div>
       </div>
     {{/if}}
