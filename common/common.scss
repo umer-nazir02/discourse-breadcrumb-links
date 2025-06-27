@@ -66,6 +66,7 @@
       display: flex;
       align-items: center;
       gap: 0.25em;
+      margin-bottom: 0.25em;
       
       .discourse-tag {
         background: var(--tertiary-low);
@@ -183,4 +184,8 @@ li.current.topic, /* excludes the current Topic title from the breadcrumb */
 
 .breadcrumbs__title {
   display: none
+}
+
+.topic-category {
+  display: none !important;
 }
