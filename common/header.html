@@ -43,7 +43,7 @@
                         if (topicTags.length > 0) {
                             let tagsHtml = '<div class="breadcrumbs__tags"><div class="discourse-tags" role="list">';
                             topicTags.forEach((tag) => {
-                                tagsHtml += `<a href="/tag/${tag}" class="discourse-tag simple" rel="tag" title="${tag}" data-tag-name="${tag}">${tag}</a>`;
+                                tagsHtml += `<a href="/tag/${tag}" class="discourse-tag simple" rel="tag" title="${tag}" data-tag-name="${tag.toLowerCase()}">${tag}</a>`;
                             });
                             tagsHtml += '</div></div>';
                             

@@ -115,7 +115,7 @@ export default class Breadcrumbs extends Component {
     if (this.topicTags && this.topicTags.length > 0) {
       let tagsHtml = '<div class="discourse-tags" role="list">';
       this.topicTags.forEach((tag) => {
-        tagsHtml += `<a href="/tag/${tag}" class="discourse-tag simple" rel="tag" title="${tag}" data-tag-name="${tag}">${tag}</a>`;
+        tagsHtml += `<a href="/tag/${tag}" class="discourse-tag simple" rel="tag" title="${tag}" data-tag-name="${tag.toLowerCase()}">${tag}</a>`;
       });
       tagsHtml += '</div>';
       return tagsHtml;
