@@ -52,11 +52,7 @@
         color: var(--tertiary);
       }
     }
-    .home::after,
-    .parent::after,
-    .current::after  {
-      content: ">\00a0";
-    }
+    // Only add arrows via JavaScript now
   }
 }
 
@@ -94,17 +90,16 @@
         color: var(--tertiary);
       }
     }
-    .home::after,
-    .parent::after,
-    .current::after {
-      content: ">\00a0";
-    }
+    // Only add arrows via JavaScript now
   }
 }
 
-
-
-
+// Style for the JavaScript-generated arrows
+.breadcrumb-arrow {
+  color: var(--primary-medium);
+  font-weight: normal;
+  margin: 0 0.5em;
+}
 
 body.has-breadcrumbs #breadcrumbsContainer,
 li.current.topic, /* excludes the current Topic title from the breadcrumb */
