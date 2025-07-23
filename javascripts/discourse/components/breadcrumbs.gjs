@@ -124,40 +124,58 @@ export default class Breadcrumbs extends Component {
   }
 
   <template>
-    {{#if this.currentPage}}
-      {{bodyClass "has-breadcrumbs"}}
-      <div class="breadcrumbs">
-        <div class="breadcrumbs__container">
-          <ul class="breadcrumbs__links">
-            <li class="home">
-              {{#if this.homePage}}
-All
-              {{else}}
-                <a href="/">
-                  <span class="breadcrumbs__title">
-                    {{dIcon "arrow-left"}}
-                  </span>
-All
-                </a>
-              {{/if}}
-            </li>
+  {{#if this.currentPage}}
+    {{bodyClass "has-breadcrumbs"}}
+    <div class="breadcrumbs">
+      <div class="breadcrumbs__container">
+        <ul class="breadcrumbs__links">
+          <li class="home">
+            {{#if this.homePage}}
+              All
+            {{else}}
+              <a href="/">
+                <span class="breadcrumbs__title">
+                  {{dIcon "arrow-left"}}
+                </span>
+                All
+              </a>
+            {{/if}}
 
             {{#if this.parentPage}}
-              <li class="parent">
-                <a href="/c/{{this.parentCategoryLink}}">
-                  {{this.parentPage}}</a>
-              </li>
+              <span class="breadcrumb-arrow"> > </span>
             {{/if}}
-          </ul>
+          </li>
 
-          {{! Display tags after breadcrumbs if available }}
-          {{#if this.tagsHtml}}
-            <div class="breadcrumbs__tags">
-              {{{this.tagsHtml}}}
-            </div>
+          {{#if this.parentPage}}
+            <li class="parent">
+              <a href="/c/{{this.parentCategoryLink}}">
+                {{this.parentPage}}
+              </a>
+              {{#if this.currentPage}}
+                <span class="breadcrumb-arrow"> > </span>
+              {{/if}}
+            </li>
           {{/if}}
-        </div>
+
+          {{#if this.currentPage}}
+            <li class="current last">
+              {{this.currentPage}}
+            </li>
+          {{/if}}
+        </ul>
+
+        {{! Display tags after breadcrumbs if available }}
+        {{#if this.tagsHtml}}
+          <div class="breadcrumbs__tags">
+            {{{this.tagsHtml}}}
+          </div>
+        {{/if}}
       </div>
-    {{/if}}
-  </template>
+    </div>
+  {{/if}}
+</template>
+
+
+
+  
 }
