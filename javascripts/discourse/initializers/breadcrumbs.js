@@ -1,7 +1,11 @@
 import { apiInitializer } from "discourse/lib/api";
-import BreadCrumbs from "../components/breadcrumbs";
+// import Breadcrumbs from "../components/breadcrumbs";
 
 export default apiInitializer("1.14.0", (api) => {
-  api.renderInOutlet("above-main-container", BreadCrumbs);
-  api.renderInOutlet("below-topic-title", BreadCrumbs);
+  api.decorateWidget("header:after", (decoratorHelper) => {
+    // Check if the header-title element exists before trying to mount
+    if (decoratorHelper.element.querySelector(".header-title")) {
+      return decoratorHelper.attach("breadcrumbs");
+    }
+  });
 });
